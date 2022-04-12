@@ -13,7 +13,7 @@ spec:
   - name: datanode
     port: 50010
     protocol: TCP
-  - name: datanodeipc
+  - name: ipc
     port: 50020
     protocol: TCP
   - name: webhdfs

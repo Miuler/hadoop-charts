@@ -51,6 +51,14 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
         ports:
+        - containerPort: 8030
+          name: ipc0
+        - containerPort: 8031
+          name: ipc1
+        - containerPort: 8032
+          name: ipc2
+        - containerPort: 8033
+          name: ipc3
         - containerPort: 8088
           name: web
         command:
