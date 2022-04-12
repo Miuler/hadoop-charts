@@ -54,7 +54,9 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
         ports:
-        - containerPort: 8088
+        - containerPort: 8040
+          name: ipc
+        - containerPort: 8042
           name: web
         command:
            - "/bin/bash"

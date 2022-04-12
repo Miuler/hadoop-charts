@@ -50,6 +50,13 @@ spec:
       - name: hdfs-dn
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
+        ports:
+          - containerPort: 50010
+            name: datanode
+          - containerPort: 50020
+            name: ipc
+          - containerPort: 50075
+            name: webhdfs
         command:
            - "/bin/bash"
            - "/tmp/hadoop-config/bootstrap.sh"
